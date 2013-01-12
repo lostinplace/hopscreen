@@ -1,7 +1,8 @@
 ﻿
+//$.support.cors = true;
 //handles content received for google movies requests
 function googleMoviesFrameLoaded() {
-  debugger;
+  
 }
 
 $(function () {
@@ -18,19 +19,28 @@ $(function () {
 
     
     //zip=near
+
     query = query.replace('{0}', $('#zipInput').val());
-    $('#queryInput').val(url);
-    $.ajax({
-      url:'http://query.yahooapis.com/v1/public/yql',
-      data: 'q='+query,
-      success:function(a,b,c){
-        //store the results of our google movies query
-        googleMoviesResultsHTML = $(a).find('results:first>body');
-      },
-      onerror:function(a,b,c){
-        alert('ERROR');
-      }
-    });
+    try {
+      $.ajax({
+        type: 'GET',
+        cache: false,
+        url: 'http://query.yahooapis.com/v1/public/yql',
+        data: 'q=' + query,
+        dataType: 'html',
+        success: function (a, b, c) {
+          //store the results of our google movies query
+          googleMoviesResultsHTML = $(a).find('results:first>body');
+        },
+        error: function (a, b, c) {
+          alert('ERROR');
+        }
+      });
+    } catch (e) {
+      alert(e);
+    }
+
+    
     
   });
 });
