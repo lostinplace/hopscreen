@@ -1,5 +1,6 @@
 ﻿// jQuery.XDomainRequest.js
 // Author: Jason Moon - @JSONMOON
+// Source: https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest (12JAN2013)
 // IE8+
 if (!jQuery.support.cors && window.XDomainRequest) {
   var httpRegEx = /^https?:\/\//i;
