@@ -14,15 +14,15 @@ $(function () {
   //handle the click event for "submit" button
   $('#locationForm').on('click', '#submitButton', function (e) {
     //setup our yql query
-    var url = "select * from html where url='http://www.google.com/movies?near={0}'";
+    var query = "select * from html where url='http://www.google.com/movies?near={0}'";
 
     
     //zip=near
-    url = url.replace('{0}', $('#zipInput').val());
+    query = query.replace('{0}', $('#zipInput').val());
     $('#queryInput').val(url);
     $.ajax({
       url:'http://query.yahooapis.com/v1/public/yql',
-      data: 'q='+url,
+      data: 'q='+query,
       success:function(a,b,c){
         //store the results of our google movies query
         googleMoviesResultsHTML = $(a).find('results:first>body');
