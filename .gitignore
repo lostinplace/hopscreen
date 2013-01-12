@@ -11,3 +11,6 @@
 *.lai
 *.la
 *.a
+
+#ASP.NET requirement
+web.config
