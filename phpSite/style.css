@@ -1,0 +1,151 @@
+		body,
+		html {
+			margin:0;
+			padding:0;
+			font: 13px/18px sans-serif;
+			color: #333;
+		}
+		
+		h1 {
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 15px;
+			clear: both;
+			padding: 0px 50px 15px 50px;
+			font-family: "lft-etica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		
+		.theater_title {
+			margin-bottom: 5px;
+			font-family: "lft-etica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 18px;
+			border-bottom: 1px solid #333;
+			padding-bottom: 5px;
+			float: left;
+		}
+		.theater_info {
+			float: right;
+			font-style: italic;
+		}
+		
+		#wrap {
+			margin: 0 50px;
+		}
+		
+		#header {
+			text-align: right;
+			padding: 15px 0 0 0;
+			color: #659AD0;
+			font: 30px serif;
+			margin: 30px 50px;
+		}
+		
+		
+		#form_movies checkbox {
+			margin: 5px;
+		}
+		
+		#form_location input {
+			font-size: 25px;
+			text-align: center;
+			padding: 8px;
+		}
+		
+		.hidden_button {
+			position: absolute;
+			left: -9999px;
+			width: 1px;
+			height: 1px;
+		}
+		
+		ul.film_grid li {
+			width: 102px;
+			height: 210px;
+			min-height: 210px;
+			vertical-align: top;
+			line-height: 10px;
+			
+			display:inline-block;
+			text-align:center;
+			background: #eee;
+			padding: 2px;
+			margin: 2px;
+			font-size: 10px;
+			border: 1px solid #ccc;
+			font-weight: bold;
+		}
+		ul.film_grid li img {
+			border: 1px solid #fff;
+			margin-bottom: 5px;
+		}
+		
+		#film_schedule {
+			background: #eee url("rough_diagonal.png") repeat;
+			font-size: 10px;
+			margin: 0;
+			padding: 0;
+			margin-bottom: 1px;
+			border-collapse:collapse;
+		}
+		
+		#film_schedule td {
+			margin: 0;
+			text-align: center;
+			padding: 5px 0px;
+		}
+		#film_schedule tr {
+			margin: 0;
+			padding: 0;
+		}
+		
+		div.error {
+			color: #FF0066;
+			font-weight: bold;
+		}
+
+		td.film, td.break {
+			background: #fff;
+			border: 1px solid #ccc;
+		}
+		td.break {
+			line-height:8px;
+		}
+		.tiny {
+			font-size: 9px;
+			font-variant:small-caps;
+		}
+
+		td.bg {
+			border: 1px solid #ccc;
+		}
+		td.meta {
+			background: #fff;
+			border: 1px solid #fff;
+			line-height: 8px;
+		}
+		
+		input.toggle-expired:checked ~ #film_schedule td.expired {
+			opacity: 0.5;
+		}
+		
+		ul.film_list, 
+		ul.film_grid {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.film_list li {
+			float: left;
+			margin: 0px 10px 20px 0px;
+			padding: 10px;
+			background: #eee;
+		}
+		
+		br {
+			clear: both;
+		}
+		
+		#footer {
+			text-align: left;
+			font-size: 10px;
+			margin: 100px 50px 50px 50px;
+		}
