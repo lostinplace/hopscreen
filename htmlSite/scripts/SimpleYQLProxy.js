@@ -21,12 +21,17 @@ $(function () {
     //zip=near
 
     query = query.replace('{0}', $('#zipInput').val());
+    var tmpDate = new Date();
+    
+    var tmprnd = tmpDate.getYear() + tmpDate.getMonth() + tmpDate.getDay() + tmpDate.getHours() + (~~(tmpDate.getMinutes() / 30));
+    var data = 'q={0}&tim={1}';
+    data = data.replace('{0}', query).replace('{1}', tmprnd);
     try {
       $.ajax({
         type: 'GET',
         cache: false,
         url: 'http://query.yahooapis.com/v1/public/yql',
-        data: 'q=' + query,
+        data: data,
         dataType: 'html',
         success: function (a, b, c) {
           //store the results of our google movies query
@@ -39,8 +44,5 @@ $(function () {
     } catch (e) {
       alert(e);
     }
-
-    
-    
   });
 });
