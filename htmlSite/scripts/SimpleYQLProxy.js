@@ -1,8 +1,13 @@
 ﻿
 //$.support.cors = true;
 //handles content received for google movies requests
-function googleMoviesFrameLoaded() {
-  
+function scrapeTheaters(aResult) {
+  var theaterCount = 0;
+  var theaters = aResult('#movie_results .theater');
+  theaters.each(function (k, v) {
+    theaterCount++;
+
+  });
 }
 
 $(function () {
@@ -36,6 +41,7 @@ $(function () {
         success: function (a, b, c) {
           //store the results of our google movies query
           googleMoviesResultsHTML = $(a).find('results:first>body');
+          scrapeTheaters(googleMoviesResultsHTML);
         },
         error: function (a, b, c) {
           alert('ERROR');
